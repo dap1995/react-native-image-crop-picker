@@ -621,7 +621,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         //         .withAspectRatio(width, height)
         //         .withOptions(options)
         //         .start(activity);
-        CropImage.activity(uri).start(getCurrentActivity());
+        // remove .setAspectRatio(1,1) to remove square aspect ratio
+        CropImage.activity(uri).setAspectRatio(1,1).start(getCurrentActivity());
     }
 
     private void imagePickerResult(Activity activity, final int requestCode, final int resultCode, final Intent data) {
